@@ -14,7 +14,7 @@ Run time and result volume depend on:
 
 - Number and length of search terms, location specificity, and `maxResults`.
 - Search-provider response times, result availability, and rate limiting.
-- Whether optional website extraction is enabled; the current implementation may request one homepage per unique result.
+- Whether optional website extraction is enabled; the current implementation may request one result URL per unique result.
 - Website response times, 10-second per-request timeout, proxy behavior, and transient failures.
 
 The implementation derives search pages from the desired maximum, uses three query variations per term, and sets `maxRequestsPerCrawl` to `maxResults × 3`. These are configuration bounds, not a throughput guarantee.
@@ -23,7 +23,7 @@ The implementation derives search pages from the desired maximum, uses three que
 
 - Start with a small `maxResults` and a few precise terms to inspect result relevance.
 - Use focused searches and run separate locations to make quality easier to evaluate.
-- Disable `extractEmails` when only business discovery is needed; this avoids additional homepage requests.
+- Disable `extractEmails` when only business discovery is needed; this avoids additional website requests.
 - Increase run size gradually, monitor completion and data quality, and use proxy settings according to your Apify account and source-site terms.
 - Normalize, deduplicate, and manually validate records in your downstream system before outreach.
 

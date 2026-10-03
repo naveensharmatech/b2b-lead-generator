@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Example Home Care Provider",
+    "category": "Home Care Agencies",
+    "location": "Austin, TX",
+    "snippet": "Example home care services in Austin. Call (512) 555-0100.",
+    "website": "https://example.org/",
+    "phone": "(512) 555-0100",
+    "email": "contact@example.org",
+    "allEmails": [
+      "contact@example.org"
+    ],
+    "socialLinks": {
+      "linkedin": null,
+      "facebook": null,
+      "twitter": null,
+      "instagram": null
+    },
+    "scrapedAt": "2026-01-01T12:00:00.000Z",
+    "source": "Opility B2B Engine"
+  }
+]

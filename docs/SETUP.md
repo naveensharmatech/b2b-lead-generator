@@ -37,6 +37,6 @@ The included `Dockerfile` uses `apify/actor-node:20`, installs production depend
 ## Troubleshooting
 
 - **No or few records:** Try narrower/alternative search phrases or another location. Search results are externally controlled; `maxResults` is an upper bound, not a guarantee.
-- **No email/social values:** Keep `extractEmails` enabled, confirm the site has a reachable homepage, and note that extraction inspects only the requested page.
+- **No email/social values:** Keep `extractEmails` enabled, confirm the result URL is reachable, and note that extraction inspects only that requested page.
 - **Local run cannot access proxy:** Check Apify account/token and proxy access. Test without a proxy only where permitted and appropriate.
 - **Test command reports syntax error:** Check the reported file/line and run `npm test` again after correcting it.

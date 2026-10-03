@@ -1,0 +1,13 @@
+{
+  "searchTerms": [
+    "Home Care Agencies",
+    "Dental Practices",
+    "IT Services"
+  ],
+  "location": "Austin, TX",
+  "maxResults": 100,
+  "extractEmails": true,
+  "proxyConfiguration": {
+    "useApifyProxy": true
+  }
+}

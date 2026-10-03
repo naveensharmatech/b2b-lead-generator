@@ -13,7 +13,7 @@ Automate the discovery of local and B2B businesses from web search results, then
 
 - Search for businesses by keyword/category and geographic location.
 - Collect business names, result snippets, websites, and phone numbers when present in search snippets.
-- Optionally scan the business homepage for email addresses and links to LinkedIn, Facebook, X/Twitter, and Instagram.
+- Optionally scan the result website URL for email addresses and links to LinkedIn, Facebook, X/Twitter, and Instagram.
 - Save records to the default Apify dataset for download and downstream processing.
 
 ### Project-reported results
@@ -60,7 +60,7 @@ This tool is an alternative workflow for business discovery—not a like-for-lik
 
 ## How it works
 
-The Actor creates search queries for each term and location, crawls DuckDuckGo HTML search results, deduplicates result URLs, and writes records to the dataset. When `extractEmails` is enabled, it makes one request to each result's website homepage to collect email-like strings and supported social links. It does not currently crawl multiple pages per website or validate email ownership/deliverability. See [Architecture](docs/ARCHITECTURE.md).
+The Actor creates search queries for each term and location, crawls DuckDuckGo HTML search results, deduplicates result URLs, and writes records to the dataset. When `extractEmails` is enabled, it makes one request to each result URL to collect email-like strings and supported social links. It does not currently crawl multiple pages per website or validate email ownership/deliverability. See [Architecture](docs/ARCHITECTURE.md).
 
 ## Local development
 
@@ -88,4 +88,3 @@ The project is published under the **Opility** brand. For Actor usage, support, 
 - [Category examples](assets/category-examples.md)
 - [Performance data notes](assets/performance-data.md)
 - [Comparison and positioning](assets/comparison.md)
-

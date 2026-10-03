@@ -11,7 +11,7 @@ Actor input
    │                                  │
    │                                  └── parse result title, snippet, URL
    │
-   ├── optional homepage request → extract email-like strings and social links
+   ├── optional website request → extract email-like strings and social links
    │
    └── deduplicate result URLs → write lead records to Apify Dataset
 ```
@@ -23,7 +23,7 @@ Actor input
 3. Generate search page URLs for those variations. The number of pages is derived from `maxResults` and the number of terms, with at least two pages per variation.
 4. Use Crawlee's `CheerioCrawler` to fetch and parse DuckDuckGo HTML result pages. The Actor caps crawler requests at three times `maxResults`.
 5. Deduplicate leads by result website URL, then extract the title, search snippet, URL, category, and requested location. A phone number is taken from the snippet if a pattern matches.
-6. If `extractEmails` is enabled and the result URL begins with `http`, make one request to that website URL. Parse email-like strings and links to LinkedIn, Facebook, X/Twitter, and Instagram from the returned page.
+6. If `extractEmails` is enabled and the result URL begins with `http`, make one request to that URL (which may be a homepage or another page). Parse email-like strings and links to LinkedIn, Facebook, X/Twitter, and Instagram from the returned page.
 7. Push each record to the default Apify dataset until the requested `maxResults` count is reached or the available results are exhausted.
 
 The current implementation does not use Google Maps, LinkedIn, or a dedicated business directory API as a search source. It does not crawl multiple pages of each business site, verify phone numbers, or confirm email ownership/deliverability. See [API Reference](API-REFERENCE.md) for output semantics.
